@@ -1,0 +1,128 @@
+body{
+    margin : 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e7f3ff;
+    height: 100dvh; /* dvh-display viex height */
+    display: flex;
+    flex-direction: column;
+}
+body h1{
+    text-align: center;
+}
+body h3{
+    text-align: center;
+}
+/* Estilos para o cabeçalho */
+header{
+    background-color: #1e90ff;
+    padding: 10px 20px; /* a primeira parte ajusta as margens internas horizontais; a segunda ajusta as margens externas
+    como funciona o padding 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cada padding da um espaçamento diferente em cada parte interna
+    */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    box-shadow: 0 3px 4px #555;
+}
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+header nav{
+    display: flex;
+    gap: 15px; /* Dá espaço entre os elementos */
+}
+header nav a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+header nav a:hover{
+    text-decoration: underline;
+    transition: 0.2s;
+    scale: 1.1;
+    color: #e7f3ff;
+    text-shadow: 0 2px 2px #505050;
+}
+main{
+    flex: 1;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 6px #aaa;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Estilos do rodapé */
+footer{
+    background-color: #1e90ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 -4px 4px #555;
+}
+
+.titulo{
+    text-align: center;
+    color: #1e90ff;
+    text-shadow: 0 2px 2px #aaa;
+}
+
+form{
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input{
+    padding: 8px;
+}
+
+button{
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: #0d4073;
+    box-shadow: 0 4px 4px #555;
+}
+.resultado{
+    margin-top: 20px;
+    text-align: center;
+}
+.blocos{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.bloco{
+    padding: 10px 50px;
+    box-shadow:0 9px 10px #555;
+    border-radius: 20px;
+}
+a{
+    text-decoration: none;
+    color: #1e90ff;
+    text-shadow: 0 4px 4px #555;
+}
+.ajusteimg{
+    align-items: center;
+    width: 300px;
+}

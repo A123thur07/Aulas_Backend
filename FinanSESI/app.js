@@ -26,7 +26,7 @@ app.get('/sobre', (req,res) => {
     res.render('sobre');
 });
 app.get('/juros_Simples', (req,res) => {
-    // Buscando o arquivo sobre.ejs na pasta views
+    // Buscando o arquivo Juros_Simples.ejs na pasta views
     res.render('Juros_Simples');
 });
 app.post('/juros_simples', (req,res) => {
@@ -38,6 +38,21 @@ app.post('/juros_simples', (req,res) => {
     const total = juros+capital
 
     res.render('juros_simples', {capital, taxa, tempo, juros, total})
+})
+app.get('/juros_compostos', (req,res) => {
+    // Buscando o arquivo Juros_Compostos.ejs na pasta views
+    res.render('juros_Compostos');
+});
+app.post('/juros_compostos', (req,res) => {
+    //recebendo os dados dos campos do formulário
+    const capital = Number(req.body.capital);
+    const taxa = Number(req.body.taxa);
+    const tempo = Number(req.body.tempo);
+    const total =capital*((1+(taxa/100))**tempo);
+    const juros = total - capital;
+    
+
+    res.render('juros_compostos', {capital, taxa, tempo, juros, total})
 })
 
 
