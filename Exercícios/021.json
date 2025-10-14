@@ -1,0 +1,24 @@
+{
+    "Sala":"Sala 12",
+    "N_Alunos": 64,
+    "N_pessoasPorPeriodo": 32,
+    "Periodos_anos":{
+        "Manha":"2ºB EM",
+        "Tarde":"6ºB EF"
+    },
+    "NomeAlunos_2ºB":["Ana","Arthur","Bruno"],
+    "N_Chamada_2ºB":[
+        {
+            "nome":"Ana",
+            "Nº":1
+        },
+        {
+            "nome":"Arthur",
+            "Nº":2
+        },
+        {
+            "nome":"Bruno",
+            "Nº":3
+        }
+    ]
+}

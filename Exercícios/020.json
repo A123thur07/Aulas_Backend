@@ -1,0 +1,20 @@
+{
+    "nome": "Arthur",
+    "username": "@Art123hur",
+    "nr_seguidores": 50,
+    "posts":[
+        {
+            "curtidas": 10,
+            "legenda": "minha casa"
+        },
+        {
+            "curtidas": 20,
+            "legenda": "Na praia"
+        },
+        {
+            "curtidas": 10,
+            "legenda": "Feliz dia das mãe"
+        }
+
+    ]
+}
