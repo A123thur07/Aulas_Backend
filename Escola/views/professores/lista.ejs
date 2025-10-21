@@ -1,0 +1,31 @@
+<%- include('../includes/header.ejs', {titulo: 'Painel Administrativo' }) %>
+
+    <main>
+        <h2>Lista de professores</h2>
+        <a href="/professores/novo" class="btn btn-principal">Adicionar Professores</a>
+        <table class="dados-table">
+            <thead>
+                <tr>
+                    <th>Nome </th>
+                    <th>Telefone</th>
+                    <th>Formações</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let professor of dadosProfessores) { %>               
+                <tr>
+                    <td><%= professor.nome_professor %></td>
+                    <td><%= professor.telefone %></td>
+                    <td><%= professor.formacao %></td>
+                    <td>
+                        <a href="#" class="btn btn-editar">Editar</a>
+                        <a href="#" class="btn btn-delete">Excluir</a>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </main>
+
+<%- include('../includes/footer.ejs') %>
