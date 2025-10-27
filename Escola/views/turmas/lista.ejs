@@ -15,8 +15,10 @@
                 <tr>
                     <td><%= turmas.nome_turma %></td>
                     <td>
-                        <a href="#" class="btn btn-editar">Editar</a>
-                        <a href="#" class="btn btn-delete">Excluir</a>
+                        <a href="/turmas/editar/<%= turmas.id_turma %>" class="btn btn-editar">Editar</a>
+                        <form action="/turmas/excluir/<%= turmas.id_turma %>" method="POST" class="acoes">
+                            <button type="submit" class="btn btn-delete">Excluir</button>
+                        </form>
                     </td>
                 </tr>
                 <% } %>

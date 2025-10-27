@@ -19,8 +19,10 @@
                     <td><%= professor.telefone %></td>
                     <td><%= professor.formacao %></td>
                     <td>
-                        <a href="#" class="btn btn-editar">Editar</a>
-                        <a href="#" class="btn btn-delete">Excluir</a>
+                        <a href="/professores/editar/<%= professor.id_professor %>" class="btn btn-editar">Editar</a>
+                        <form action="/professores/excluir/<%= professor.id_professor %>" method="POST" class="acoes">
+                            <button type="submit" class="btn btn-delete">Excluir</button>
+                        </form>
                     </td>
                 </tr>
                 <% } %>

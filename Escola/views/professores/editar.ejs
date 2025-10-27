@@ -1,0 +1,23 @@
+<%- include('../includes/header.ejs', {titulo: 'Atualizar Professores' }) %>
+
+<main>
+    <h2>Aualizando dados do Professor</h1>
+    <form action="/professores/editar/<%= professor.id_professor %>" method="POST" class="form">
+        <div class="form-group">
+            <label >Nome do Professor</label>
+            <input type="text" name="nome_professor" value="<%= professor.nome_professor %>" required>
+        </div>
+        <div class="form-group">
+            <label >Telefone do Professor</label>
+            <input type="text" name="telefone" value="<%= professor.telefone %>" required>
+        </div>
+        <div class="form-group">
+            <label >Formação do Professor</label>
+            <input type="text" name="formacao" value="<%= professor.formacao %>" required>
+        </div>
+        <button type="submit" class="btn btn-principal">Adicionar</button>
+        <a href="/professores/listar" class="btn btn-secundario">Cancelar</a>
+    </form>
+</main>
+
+<%- include('../includes/footer.ejs') %>
