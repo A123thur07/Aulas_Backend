@@ -11,7 +11,8 @@
                 </tr>
             </thead>
             <tbody>
-                <% for( let turmas of dadosTurmas) { %>               
+                <% for( let turmas of dadosTurmas) { %>      
+                    <% if(turmas.ativo == true)  { %>            
                 <tr>
                     <td><%= turmas.nome_turma %></td>
                     <td>
@@ -21,6 +22,7 @@
                         </form>
                     </td>
                 </tr>
+                    <% } %>
                 <% } %>
             </tbody>
         </table>

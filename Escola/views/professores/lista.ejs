@@ -13,7 +13,8 @@
                 </tr>
             </thead>
             <tbody>
-                <% for( let professor of dadosProfessores) { %>               
+                <% for( let professor of dadosProfessores) { %>    
+                    <% if(professor.ativo == true)  { %>      
                 <tr>
                     <td><%= professor.nome_professor %></td>
                     <td><%= professor.telefone %></td>
@@ -25,6 +26,7 @@
                         </form>
                     </td>
                 </tr>
+                    <% } %>
                 <% } %>
             </tbody>
         </table>
