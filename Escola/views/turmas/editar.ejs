@@ -5,7 +5,7 @@
     <form action="/turmas/editar/<%= turma.id_turma %>" method="POST" class="form">
         <div class="form-group">
             <label for="nome_turma">Nome da Turma</label>
-            <input type="text" name="nome_turma">
+            <input type="text" name="nome_turma" value="<%= turma.nome_turma %>">
         </div>
         <button type="submit" class="btn btn-principal">Adicionar</button>
         <a href="/turmas/listar" class="btn btn-secundario">Cancelar</a>

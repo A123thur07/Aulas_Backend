@@ -1,0 +1,40 @@
+<%- include('../includes/header.ejs', {titulo: 'Lista de turmas' }) %>
+
+    <main>
+        <h2>Lista de disciplinas</h2>
+        <a href="/disciplinas/novo" class="btn btn-principal">Adicionar Disciplinas</a>
+        <form action="/disciplinas/listar" method="get" class="form form-consulta">
+            <input type="text" name="busca" placeholder="Buscar por nome ou turma">
+            <select name="ordem">
+                <option value="nome_disciplina">Ordenar por nome de disciplina</option>
+                <option value="nome_professor">Ordenar por nome de professor</option>
+            </select>
+            <button type="submit" class="btn btn-principal">Buscar</button>
+        </form>
+        
+        <table class="dados-table">
+            <thead>
+                <tr>
+                    <th>Nome Disciplina</th>
+                    <th>Nome Professor</th>
+                    <th>Ações </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let disciplina of dadosDisciplinas) { %>               
+                <tr>
+                    <td><%= disciplina.nome_disciplina %></td>
+                    <td><%= disciplina.nome_professor %></td>
+                    <td>
+                        <a href="/disciplinas/editar/<%= disciplina.id_disciplina %>" class="btn btn-editar">Editar</a>
+                        <form action="/disciplinas/excluir/<%= disciplina.id_disciplina %>" method="POST" class="acoes">
+                            <button type="submit" class="btn btn-delete">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </main>
+
+<%- include('../includes/footer.ejs') %>

@@ -3,6 +3,13 @@
     <main>
         <h2>Lista de turmas</h2>
         <a href="/turmas/novo" class="btn btn-principal">Adicionar Turmas</a>
+        <form action="/turmas/listar" method="get" class="form form-consulta">
+            <input type="text" name="busca" placeholder="Buscar por turma">
+            <select name="ordem">
+                <option value="nome_turma">Ordenar por nome de turma</option>
+            </select>
+            <button type="submit" class="btn btn-principal">Buscar</button>
+        </form>
         <table class="dados-table">
             <thead>
                 <tr>

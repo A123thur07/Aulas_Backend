@@ -25,6 +25,15 @@ app.use('/professores', professoresRotas);
 const turmasRotas = require('./routes/turmas')
 app.use('/turmas', turmasRotas);
 
+//Importando as rotas Disciplinas
+const disciplinasRotas = require('./routes/disciplinas')
+app.use('/disciplinas', disciplinasRotas);
+
+//Importando as rotas Alunos
+const alunosRotas = require('./routes/alunos')
+app.use('/alunos', alunosRotas);
+
+
 const porta=3000;
 app.listen(porta, () => {
     console.log(`Servidor http://localhost:${porta}`);

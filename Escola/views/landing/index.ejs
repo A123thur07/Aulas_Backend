@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema escolar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <h1>Bem-vindo ao SESI 025 Andradina</h1>
-    <a href="/admin/">Área Administrativa</a>
+<title>Sistema escolar</title>
+</head>
+
+<body class="bg-[#000] bg-opacity-60 rounded-lg bg-cover bg-center h-screen text-white ">
+    <header class=" bg-black p-8 items-center flex justify-center shadow-lg shadow-black  ">
+        <div class="flex justify-center ">
+            <img src="https://www.sesisp.org.br/images/Sesi-SP.jpg" alt=""
+                class="h-20 shadow-[#E40621] shadow-lg rounded-lg">
+            <br>
+            <img src="https://www.inova.unicamp.br/wp-content/uploads/2021/05/SENAI-SP.jpg" alt=""
+                class="h-20 shadow-[#DA251C] shadow-lg rounded-lg ml-2">
+        </div>
+        <h1></h1>
+    </header>
+    <main style="flex: 1">
+        <div class="items-center justify-center text-center p-8">
+            <h1 class="text-4xl font-bold mb-4 text-shadow-lg">Bem-vindo ao <span class="text-red-500 italic">SESI
+                    025</span> de Andradina!</h1>
+            <p>Este site tem a permissão somente de funcionários SESI e SENAI para controle de alunos e funcionários</p>
+            <br>
+            <div class="flex">
+                <img src="https://cronos-media.sesisenaisp.org.br/api/media/1-0/files?img=img_3_240829_5bf371d2-1a39-480a-8e1c-0fbcef571781_o.jpg&tipo=p"
+                    alt="imagem"
+                    class=" w-192 h-192 rounded-full ml-[-20] absolute -left-150 shadow-white shadow-lg bg-opacity-60">
+                <img src="https://cronos-media.sesisenaisp.org.br/api/media/1-0/files?img=img_3_240829_5bf371d2-1a39-480a-8e1c-0fbcef571781_o.jpg&tipo=p"
+                    alt="imagem" class="w-96 h-96 rounded-full ml-[-20] absolute left-10 shadow-white shadow-lg">
+                <img src="https://cronos-media.sesisenaisp.org.br//api/media/1-0/files?img=img_12_220405_edb86f49-3f5f-4ae8-b5bc-ae773a8ae190_o.jpeg&tipo=p"
+                    alt="imagem" class="w-100 rounded-full absolute -right-30 shadow-white shadow-lg">
+                <img src="https://cronos-media.sesisenaisp.org.br//api/media/1-0/files?img=img_12_220405_edb86f49-3f5f-4ae8-b5bc-ae773a8ae190_o.jpeg&tipo=p"
+                    alt="imagem" class="w-100 rounded-full absolute -right-20 top-50 shadow-white shadow-lg">
+                <img src="https://cronos-media.sesisenaisp.org.br//api/media/1-0/files?img=img_12_220405_edb86f49-3f5f-4ae8-b5bc-ae773a8ae190_o.jpeg&tipo=p"
+                    alt="imagem" class="w-100 rounded-full absolute -right-10 top-25 shadow-white shadow-lg">
+            </div>
+            <div>
+                <a href="/admin/" class="text-black p-3 bg-white rounded-xl font-bold hover:shadow-xl ">Área
+                    Administrativa</a>
+            </div>
+            <p></p>
+        </div>
+    </main>
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px; bottom: 20">
+        <p>&copy; 2025 - Sistema Escolar SESI</p>
+    </footer>
 </body>
+
 </html>

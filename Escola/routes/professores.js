@@ -4,7 +4,12 @@ const BD = require('../db')
 //Listar Professores (r-rotas)
 //localhost:3000/professores/listar
 rotas.get('/listar', async (req,res) =>{
-    const dados = await BD.query('SELECT * FROM professores order by nome_professor');
+    const busca = req.query.busca || '';
+    const ordem = req.query.ordem || 'nome_professor';
+    const dados = await BD.query(`
+        SELECT * FROM professores
+        WHERE ativo = true and (nome_professor ILIKE $1 or formacao ILIKE $1) order by ${ordem}`,
+        [`%${busca}%`]);
     console.log(dados.rows);
     res.render('professores/lista', {dadosProfessores: dados.rows})
 });

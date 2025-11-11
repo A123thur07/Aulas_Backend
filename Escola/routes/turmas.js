@@ -4,7 +4,11 @@ const BD = require('../db')
 //Listar turmas (r-rotas)
 //localhost:3000/turmas/listar
 rotas.get('/listar', async (req,res) =>{
-    const dados = await BD.query('SELECT * FROM turmas order by nome_turma');
+    const busca = req.query.busca || '';
+    const ordem = req.query.ordem || 'nome_turma';
+    const dados = await BD.query(`SELECT * FROM turmas
+        WHERE turmas.ativo = true and nome_turma ILIKE $1 order by ${ordem}`,
+    [`%${busca}%`] );
     console.log(dados.rows);
     res.render('turmas/lista', {dadosTurmas: dados.rows});
 });

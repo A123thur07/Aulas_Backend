@@ -1,0 +1,65 @@
+<%- include('../includes/header.ejs', {titulo: 'Lista de alunos' }) %>
+
+    <main>
+        <h2>Lista de alunos</h2>
+        <a href="/alunos/novo" class="btn btn-principal">Adicionar Alunos</a>
+        <form action="/alunos/listar" method="get" class="form form-consulta">
+            <input type="text" name="busca" placeholder="Buscar por nome ou turma">
+            <select name="ordem">
+                <option value="nome">Ordenar por nome de aluno</option>
+                <option value="nome_turma">Ordenar por nome de turma</option>
+            </select>
+            <button type="submit" class="btn btn-principal">Buscar</button>
+        </form>
+
+        <section class="lista-cards">
+            <% for( let aluno of dadosAlunos) { %> 
+                <div class="card-aluno">
+                    <img src="<%= aluno.foto %>">
+                    <h2><%= aluno.nome %></h2>
+                    <p><%= aluno.nome_turma %></p>
+                    <td>
+                        <a href="/alunos/editar/<%= aluno.id_aluno %>" class="btn btn-editar">Editar</a>
+                        <form action="/alunos/excluir/<%= aluno.id_aluno %>" method="POST" class="acoes">
+                            <button type="submit" class="btn btn-delete">Excluir</button>
+                        </form>
+                    </td>
+                </div>
+                <% } %>
+        </section>
+
+
+        <table class="dados-table">
+            <thead>
+                <tr>
+                    <th>Nome do Aluno</th>
+                    <th>Idade</th>
+                    <th>Sexo</th>
+                    <th>Foto</th>
+                    <th>Nome da Turma</th>
+                    <th>Ações </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for( let aluno of dadosAlunos) { %>   
+                    <% if(aluno.ativo == true)  { %>      
+                <tr>
+                    <td><%= aluno.nome %></td>
+                    <td><%= aluno.idade %></td>
+                    <td><%= aluno.sexo %></td>
+                    <td><img src="<%= aluno.foto %>" alt="foto"></td>
+                    <td><%= aluno.nome_turma %></td>
+                    <td>
+                        <a href="/alunos/editar/<%= aluno.id_aluno %>" class="btn btn-editar">Editar</a>
+                        <form action="/alunos/excluir/<%= aluno.id_aluno %>" method="POST" class="acoes">
+                            <button type="submit" class="btn btn-delete">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                <% } %> 
+                <% } %>
+            </tbody>
+        </table>
+    </main>
+
+<%- include('../includes/footer.ejs') %>

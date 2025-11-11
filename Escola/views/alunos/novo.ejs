@@ -1,0 +1,40 @@
+<%- include('../includes/header.ejs', {titulo: 'Cadastro Alunos' }) %>
+
+<main>
+    <h2>Cadastro de novo Aluno</h1>
+    <form action="/alunos/novo" method="POST" class="form">
+        <div class="form-group">
+            <label for="nome">Nome do Aluno</label>
+            <input type="text" name="nome">
+        </div>
+        <div class="form-group">
+            <label for="idade">Idade do Aluno</label>
+            <input type="number" name="idade">
+        </div>
+        <div class="form-group">
+            <label>Sexo</label>
+            <select name="sexo" required>
+                <option value="" disabled selected>Selecione o sexo</option> 
+                <option value="F">Feminino</option>
+                <option value="M">Masculino</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="foto">Foto do Aluno</label>
+            <input type="text" name="foto">
+        </div>
+        <div class="form-group">
+            <label>Turmas</label>
+            <select name="id_turma" required>
+                <option value="nome_turma">Selecione turma</option>
+                <% for (let turma of dadosTurmas ){ %>
+                    <option value="<%= turma.id_turma %>"><%= turma.nome_turma %></option>
+                <% } %>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-principal">Adicionar</button>
+        <a href="/turmas/listar" class="btn btn-secundario">Cancelar</a>
+    </form>
+</main>
+
+<%- include('../includes/footer.ejs') %>
